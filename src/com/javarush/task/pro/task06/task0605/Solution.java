@@ -16,11 +16,14 @@ public class Solution {
     }
 
     public static void reverseArray(int[] array) {
-        int[] array2 = Arrays.copyOf(array, array.length);
-        for (int i = 0; i > array.length; i++) {
-            array2[i] = array[array.length - i];
+        int[] array2 = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            array2[i] = array[(array.length - 1) - i ];
         }
-        System.out.println(Arrays.toString(array2));
+        System.arraycopy(array2, 0, array, 0, array.length);
+        //array = Arrays.copyOf(array2, array.length);
+
+        printArray(array);
     }
 
     public static void printArray(int[] array) {
